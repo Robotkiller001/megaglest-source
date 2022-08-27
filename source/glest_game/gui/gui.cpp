@@ -700,6 +700,8 @@ void Gui::mouseDownDisplayUnitSkills(int posDisplay) {
 				//give orders depending on command type
 				if(!selection.isEmpty()){
 					const CommandType *ct= selection.getUnit(0)->getType()->getFirstCtOfClass(activeCommandClass);
+					auto mct= unit->getCurrMorphCt();
+					if(mct) ct= mct->getMorphUnit()->getFirstCtOfClass(activeCommandClass);
 					if(activeCommandType!=NULL && activeCommandType->getClass()==ccBuild){
 						assert(selection.isUniform());
 						selectingBuilding= true;
