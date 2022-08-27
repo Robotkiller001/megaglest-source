@@ -960,7 +960,7 @@ void Gui::computeDisplay(){
 						auto mct = u->getCurrMorphCt();
 						if(mct && isKeyDown(queueCommandKey)) {//Morph Queue
 							ut=mct->getMorphUnit();
-						}
+						}//TODO subscribe on queueCommandKey presed => resetState() and may remove stop cmd
 
 						int morphPos= 8;
 						for(int i= 0; i < ut->getCommandTypeCount(); ++i){
